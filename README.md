@@ -5,9 +5,13 @@ Every sentence in a court case document can be assigned a rhetorical (semantic) 
 
 ## Requirements
 python = 3.7.3
+
 pytorch = 1.1.0
+
 sklearn = 0.21.3
+
 numpy = 1.17.2
+
 sent2vec (https://github.com/epfml/sent2vec)
 
 ## Codes
