@@ -4,15 +4,11 @@
 Every sentence in a court case document can be assigned a rhetorical (semantic) role, such as 'Arguments', 'Facts', 'Ruling by Present Court', etc. A single document is considered as a single training example, represented as a sequence of sentences. We use a deep neural model, 'Hierarchical BiLSTM CRF' to semantically segment court documents. (https://link_to_paper_here)
 
 ## Requirements
-python = 3.7.3
-
-pytorch = 1.1.0
-
-sklearn = 0.21.3
-
-numpy = 1.17.2
-
-sent2vec (https://github.com/epfml/sent2vec)
+-python = 3.7.3
+-pytorch = 1.1.0
+-sklearn = 0.21.3
+-numpy = 1.17.2
+-sent2vec (https://github.com/epfml/sent2vec)
 
 ## Codes
   
