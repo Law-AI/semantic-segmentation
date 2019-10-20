@@ -11,7 +11,7 @@ Every sentence in a court case document can be assigned a rhetorical (semantic) 
 - sent2vec (https://github.com/epfml/sent2vec)
 
 ## Codes
-- _model/submodels.py_ :        Contains codes for submodels that is used for constructing the top-level architectu  
+- _model/submodels.py_ :        Contains codes for submodels that is used for constructing the top-level architecture  
 - _model/Hier_BiLSTM_CRF.py_ :  Contains code for the top-level architecture
 - _prepare_data.py_ :           Functions to prepare numericalized data from raw text files
 - _train.py_ :                  Functions for training, validation and learning
@@ -48,9 +48,9 @@ By default, the model employs 5 fold cross-validation on a total of 50 documents
 
 ### Output Data format
 All output data will be found inside "saved" folder. This contains:
-- **model_state_fn.tar: **  fn is the validation fold number. This contains the architecture and model state which achieved highest macro-f1 on validation. 
-- **data_state_fn.json: **  Contains predictions, true labels, loss and training index for each document in the validation fold.  
-- **word2idx.json and tag2idx.json: ** Needed for inference
+- _model_state_fn.tar_ :  fn is the validation fold number. This contains the architecture and model state which achieved highest macro-f1 on validation. 
+- _data_state_fn.json_ : Contains predictions, true labels, loss and training index for each document in the validation fold.  
+- _word2idx.json_ and _tag2idx.json_ :  Needed for inference
   
 ## Inference
 ### Input Data format
