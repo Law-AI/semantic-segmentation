@@ -34,11 +34,10 @@ If you wish to use pretrained embeddings variant of the model, data is placed in
   ```
 ### Usage
 To run experiments with default setup, use: 
-  
+  ```
   python run.py                                                                 (no pretrained variant)
-  
   python run.py --pretrained True --data_path data/pretrained_embeddings/       (pretrained variant)
-
+  ```
 Constants, hyper parameters and path to data files can be provided as switches along with the previous command, to know more use: 
   
   python run.py -h
