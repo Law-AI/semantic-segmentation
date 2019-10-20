@@ -11,33 +11,27 @@ Every sentence in a court case document can be assigned a rhetorical (semantic) 
 - sent2vec (https://github.com/epfml/sent2vec)
 
 ## Codes
-  
-  "model/submodels.py":         Contains codes for submodels that is used for constructing the top-level architecture
-  
-  "model/Hier_BiLSTM_CRF.py":   Contains code for the top-level architecture
-  
-  "prepare_data.py":            Functions to prepare numericalized data from raw text files
-  
-  "train.py":                   Functions for training, validation and learning
-  
-  "run.py":                     For reproducing results in the paper
-  
-  "infer.py":                   For using a trained model to infer labels for unannotated documents
+- "model/submodels.py":         Contains codes for submodels that is used for constructing the top-level architectu  
+- "model/Hier_BiLSTM_CRF.py":   Contains code for the top-level architecture
+- "prepare_data.py":            Functions to prepare numericalized data from raw text files
+- "train.py":                   Functions for training, validation and learning
+- "run.py":                     For reproducing results in the paper
+- "infer.py":                   For using a trained model to infer labels for unannotated documents
 
 ## Training
 ### Input Data format
 For training and validation, data is placed inside "data/text" folder. Each document is represented as an individual text file, with one sentence per line. The format is: 
-  
+  ```
   text <TAB> label
-  
+  ```
 If you wish to use pretrained embeddings variant of the model, data is placed inside "data/pretrained_embeddings" folder. Each document is represented as an individual text file, with one sentence per line. The format is: 
-  
+  ```
   emb_f1 <SPACE> emb_f2 <SPACE> ... <SPACE> emb_f200 <TAB> label  (For 200 dimensional sentence embeddings)
-  
+  ```
 "categories.txt" contains the category information of documents in the format:
-  
+  ```
   category_name <TAB> doc <SPACE> doc <SPACE> ...
-  
+  ```
 ### Usage
 To run experiments with default setup, use: 
   
