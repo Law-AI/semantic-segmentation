@@ -39,21 +39,18 @@ To run experiments with default setup, use:
   python run.py --pretrained True --data_path data/pretrained_embeddings/       (pretrained variant)
   ```
 Constants, hyper parameters and path to data files can be provided as switches along with the previous command, to know more use: 
-  
+  ```
   python run.py -h
-
+  ```
 To see default values, check out "run.py"
 
 By default, the model employs 5 fold cross-validation on a total of 50 documents, where folds are manually constructed to have balanced category distribution across each fold.
 
 ### Output Data format
 All output data will be found inside "saved" folder. This contains:
-  
-  model_state_fn.tar:  fn is the validation fold number. This contains the architecture and model state which achieved highest macro-f1 on validation.
-  
-  data_state_fn.json:   Contains predictions, true labels, loss and training index for each document in the validation fold.
-  
-  word2idx.json and tag2idx.json: Needed for inference
+- *model_state_fn.tar:*  fn is the validation fold number. This contains the architecture and model state which achieved highest macro-f1 on validation. 
+- data_state_fn.json:   Contains predictions, true labels, loss and training index for each document in the validation fold.  
+- word2idx.json and tag2idx.json: Needed for inference
   
 ## Inference
 ### Input Data format
