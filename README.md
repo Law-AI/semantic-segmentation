@@ -11,12 +11,12 @@ Every sentence in a court case document can be assigned a rhetorical (semantic) 
 - sent2vec (https://github.com/epfml/sent2vec)
 
 ## Codes
-- "model/submodels.py":         Contains codes for submodels that is used for constructing the top-level architectu  
-- "model/Hier_BiLSTM_CRF.py":   Contains code for the top-level architecture
-- "prepare_data.py":            Functions to prepare numericalized data from raw text files
-- "train.py":                   Functions for training, validation and learning
-- "run.py":                     For reproducing results in the paper
-- "infer.py":                   For using a trained model to infer labels for unannotated documents
+- _model/submodels.py_ :        Contains codes for submodels that is used for constructing the top-level architectu  
+- _model/Hier_BiLSTM_CRF.py_ :  Contains code for the top-level architecture
+- _prepare_data.py_ :           Functions to prepare numericalized data from raw text files
+- _train.py_ :                  Functions for training, validation and learning
+- _run.py_ :                    For reproducing results in the paper
+- _infer.py_ :                  For using a trained model to infer labels for unannotated documents
 
 ## Training
 ### Input Data format
@@ -48,9 +48,9 @@ By default, the model employs 5 fold cross-validation on a total of 50 documents
 
 ### Output Data format
 All output data will be found inside "saved" folder. This contains:
-- *model_state_fn.tar:*  fn is the validation fold number. This contains the architecture and model state which achieved highest macro-f1 on validation. 
-- data_state_fn.json:   Contains predictions, true labels, loss and training index for each document in the validation fold.  
-- word2idx.json and tag2idx.json: Needed for inference
+- **model_state_fn.tar: **  fn is the validation fold number. This contains the architecture and model state which achieved highest macro-f1 on validation. 
+- **data_state_fn.json: **  Contains predictions, true labels, loss and training index for each document in the validation fold.  
+- **word2idx.json and tag2idx.json: ** Needed for inference
   
 ## Inference
 ### Input Data format
@@ -62,22 +62,21 @@ For pretrained variant, we also need to place a trained sent2vec model inside "i
 
 ### Usage
 To infer with default setup, use:
-  
+  ```
   python infer.py                       (no pretrained variant)
-  
   python infer.py --pretrained True     (pretrained variant)
-
+  ```
 Constants, hyper parameters and path to data files can be provided as switches along with the previous command, to know more use: 
-  
+  ```
   python infer.py -h
-
+  ```
 To see default values, check out "infer.py"
 
 ### Output Data format
 Output will be saved in "infer/predictions.txt", which has the format:
-  
+  ```
   document_filename <TAB> label_sent1 <COMMA> label_sent2 <COMMA> ... <COMMA> label_sentN     (N sentences in this document)
-  
+  ```
 # Notes
 1.  Make sure to set the switch --device cpu (or change the default value) if cuda is not available.
 2.  Remove the blank "__init__.py" files before running experiments.
