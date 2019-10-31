@@ -1,14 +1,30 @@
 # Semantic Segmentation of Indian Supreme Court Case Documents
 
 ## Introduction
-Every sentence in a court case document can be assigned a rhetorical (semantic) role, such as 'Arguments', 'Facts', 'Ruling by Present Court', etc. A single document is considered as a single training example, represented as a sequence of sentences. We use a deep neural model, 'Hierarchical BiLSTM CRF' to semantically segment court documents. (https://link_to_paper_here)
+This is the repository for the paper titled "Identification of Rhetorical Roles of Sentences in Indian Legal Judgments" which is to be presented at the <a href="https://jurix2019.oeg-upm.net/index.html">International Conference on Legal Knowledge and Information Systems (JURIX) 2019</a>.
 
+Every sentence in a court case document can be assigned a rhetorical (semantic) role, such as 'Arguments', 'Facts', 'Ruling by Present Court', etc. The task of assigning rhetorical roles to individual sentences in a document is known as semantic segmentation. We have developed a deep neural model (Hierarchical BiLSTM CRF) for automatic segmentation of Indian court case documents. A single document is represented as a sequence of sentences. 
+
+We make available
+(1) a set of 50 court case documents judged in the Supreme Court of India, where each sentence has been annotated with its rhetorical role by law student (see the paper for details)
+(2) the implementation of our best performing model (Hierarchical BiLSTM CRF)
+
+## Citation
+If you use this dataset or the codes, please refer to the following paper:
+```
+  @inproceedings{bhattacharya-jurix19,
+   author = {Bhattacharya, Paheli and Paul, Shounak and Ghosh, Kripabandhu and Ghosh, Saptarshi and Wyner, Adam},
+   title = {{Identification of Rhetorical Roles of Sentences in Indian Legal Judgments}},
+   booktitle = {{Proceedings of the 32nd International Conference on Legal Knowledge and Information Systems (JURIX)}},
+   year = {2019}
+  }
+```
 ## Requirements
 - python = 3.7.3
 - pytorch = 1.1.0
 - sklearn = 0.21.3
 - numpy = 1.17.2
-- sent2vec (https://github.com/epfml/sent2vec)
+- <a href="https://github.com/epfml/sent2vec">sent2vec
 
 ## Codes
 - _model/submodels.py_ :        Contains codes for submodels that is used for constructing the top-level architecture  
@@ -19,6 +35,8 @@ Every sentence in a court case document can be assigned a rhetorical (semantic) 
 - _infer.py_ :                  For using a trained model to infer labels for unannotated documents
 
 ## Training
+For training a model on an annotated dataset
+
 ### Input Data format
 For training and validation, data is placed inside "data/text" folder. Each document is represented as an individual text file, with one sentence per line. The format is: 
   ```
@@ -53,6 +71,8 @@ All output data will be found inside "saved" folder. This contains:
 - _word2idx.json_ and _tag2idx.json_ :  Needed for inference
   
 ## Inference
+For using a trained model to automatically annotate documents
+
 ### Input Data format
 Un-annotated data is to be placed inside "infer/data" folder. Each document should be represented as an individual text file, containing one sentence per line.
 
