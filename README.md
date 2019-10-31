@@ -6,7 +6,9 @@ This is the repository for the paper titled "Identification of Rhetorical Roles 
 Every sentence in a court case document can be assigned a rhetorical (semantic) role, such as 'Arguments', 'Facts', 'Ruling by Present Court', etc. The task of assigning rhetorical roles to individual sentences in a document is known as semantic segmentation. We have developed a deep neural model (Hierarchical BiLSTM CRF) for automatic segmentation of Indian court case documents. A single document is represented as a sequence of sentences. 
 
 We make available
+
 (1) a set of 50 court case documents judged in the Supreme Court of India, where each sentence has been annotated with its rhetorical role by law student (see the paper for details)
+
 (2) the implementation of our best performing model (Hierarchical BiLSTM CRF)
 
 ## Citation
