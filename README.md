@@ -3,7 +3,7 @@
 ## Introduction
 This is the repository for the paper titled "Identification of Rhetorical Roles of Sentences in Indian Legal Judgments" which is to be presented at the <a href="https://jurix2019.oeg-upm.net/index.html">International Conference on Legal Knowledge and Information Systems (JURIX) 2019</a>.
 
-Every sentence in a court case document can be assigned a rhetorical (semantic) role, such as 'Arguments', 'Facts', 'Ruling by Present Court', etc. The task of assigning rhetorical roles to individual sentences in a document is known as semantic segmentation. We have developed a deep neural model (Hierarchical BiLSTM CRF) for automatic segmentation of Indian court case documents. A single document is represented as a sequence of sentences. 
+Every sentence in a court case document can be assigned a rhetorical (semantic) role, such as 'Arguments', 'Facts', 'Ruling by Present Court', etc. The task of assigning rhetorical roles to individual sentences in a document is known as semantic segmentation. We have developed a deep neural model (Hierarchical BiLSTM CRF) for automatic segmentation of Indian court case documents. A single document is represented as a sequence of sentences. We have used 7 labels for this task: Arguments, Precedent, Statutes, Facts, Ratio Decidendi, Ruling of Lower Court, Ruling of Present Court. 
 
 We make available
 
@@ -26,7 +26,7 @@ If you use this dataset or the codes, please refer to the following paper:
 - pytorch = 1.1.0
 - sklearn = 0.21.3
 - numpy = 1.17.2
-- <a href="https://github.com/epfml/sent2vec">sent2vec
+- <a href="https://github.com/epfml/sent2vec">sent2vec</a>
 
 ## Codes
 - _model/submodels.py_ :        Contains codes for submodels that is used for constructing the top-level architecture  
@@ -80,9 +80,10 @@ Un-annotated data is to be placed inside "infer/data" folder. Each document shou
 
 For inference, we need a trained Hier-BiLSTM-CRF model. For this, place model_state.tar, word2idx.json and tag2idx.json (which were obtained after the training process) inside "infer" folder.
 
-For pretrained variant, we also need to place a trained sent2vec model inside "infer" folder. (https://link_to_sent2vec_model_here)
+For pretrained variant, we also need to place a trained sent2vec model inside "infer" folder. 
+You can download a sent2vec model pretrained on Indian Supreme Court case documents <a href="http://cse.iitkgp.ac.in/~saptarshi/models/sent2vec.bin"> here </a> (binary file of size more than 2 GB).
 
-### Usage
+### Usageel:  http://cse.iitkgp.ac.in/~saptarshi/models/sent2vec.bin  (binary file of size more than 2 GB)
 To infer with default setup, use:
   ```
   python infer.py                       (no pretrained variant)
