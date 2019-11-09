@@ -83,7 +83,7 @@ For inference, we need a trained Hier-BiLSTM-CRF model. For this, place model_st
 For pretrained variant, we also need to place a trained sent2vec model inside "infer" folder. 
 You can download a sent2vec model pretrained on Indian Supreme Court case documents <a href="http://cse.iitkgp.ac.in/~saptarshi/models/sent2vec.bin"> here </a> (binary file of size more than 2 GB).
 
-### Usageel:  http://cse.iitkgp.ac.in/~saptarshi/models/sent2vec.bin  (binary file of size more than 2 GB)
+### Usage
 To infer with default setup, use:
   ```
   python infer.py                       (no pretrained variant)
