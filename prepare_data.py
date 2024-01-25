@@ -31,7 +31,7 @@ def prepare_folds(args):
     for cat in categories:
         for doc in cat:
             folds[f].append(doc)
-            f = (f + 1) % 5
+            f = (f + 1) % docs_per_fold
 
     # list[num_folds, docs_per_fold] --> list[num_folds * docs_per_fold]
     idx_order = sum(folds, [])
